@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 226 71% 10%; /* dark-blue */
+  --foreground: 220 13% 91%; /* text-light */
+  --muted: 225 27% 17%; /* slate-dark */
+  --muted-foreground: 220 9% 65%; /* text-dark */
+  --popover: 220 20% 14%; /* slate-darker */
+  --popover-foreground: 220 13% 91%; /* text-light */
+  --card: 220 20% 14%; /* slate-darker */
+  --card-foreground: 220 13% 91%; /* text-light */
+  --border: 220 17% 27%; /* slate-light */
+  --input: 220 17% 27%; /* slate-light */
+  --primary: 146 62% 46%; /* easy/success - #2cbc63 */
+  --primary-foreground: 211 100% 99%;
+  --secondary: 39 100% 54%; /* medium - #ffa116 */
+  --secondary-foreground: 0 0% 100%;
+  --accent: 220 17% 27%; /* slate-light */
+  --accent-foreground: 220 13% 91%; /* text-light */
+  --destructive: 4 88% 60%; /* hard/danger - #ef4743 */
+  --destructive-foreground: 0 0% 98%;
+  --ring: 146 62% 46%; /* primary */
+  --radius: 0.5rem;
+
+  /* Chart colors */
+  --chart-1: 146 62% 46%; /* primary */
+  --chart-2: 39 100% 54%; /* secondary */
+  --chart-3: 4 88% 60%; /* destructive */
+  --chart-4: 220 17% 27%; /* slate-light */
+  --chart-5: 230 38% 38%; /* Additional color */
+
+  /* Sidebar colors */
+  --sidebar-background: 220 20% 14%; /* slate-darker */
+  --sidebar-foreground: 220 13% 91%; /* text-light */
+  --sidebar-primary: 146 62% 46%; /* primary */
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 220 36% 19%; /* dark-blue-light */
+  --sidebar-accent-foreground: 220 13% 91%; /* text-light */
+  --sidebar-border: 220 17% 27%; /* slate-light */
+  --sidebar-ring: 146 62% 46%; /* primary */
+}
+
+.dark {
+  /* Using the same colors as light mode since this is already dark-themed */
+  --background: 226 71% 10%; /* dark-blue */
+  --foreground: 220 13% 91%; /* text-light */
+  --muted: 225 27% 17%; /* slate-dark */
+  --muted-foreground: 220 9% 65%; /* text-dark */
+  --popover: 220 20% 14%; /* slate-darker */
+  --popover-foreground: 220 13% 91%; /* text-light */
+  --card: 220 20% 14%; /* slate-darker */
+  --card-foreground: 220 13% 91%; /* text-light */
+  --border: 220 17% 27%; /* slate-light */
+  --input: 220 17% 27%; /* slate-light */
+  --primary: 146 62% 46%; /* easy/success - #2cbc63 */
+  --primary-foreground: 211 100% 99%;
+  --secondary: 39 100% 54%; /* medium - #ffa116 */
+  --secondary-foreground: 0 0% 100%;
+  --accent: 220 17% 27%; /* slate-light */
+  --accent-foreground: 220 13% 91%; /* text-light */
+  --destructive: 4 88% 60%; /* hard/danger - #ef4743 */
+  --destructive-foreground: 0 0% 98%;
+  --ring: 146 62% 46%; /* primary */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .difficulty-easy {
+    @apply text-[#2cbc63];
+  }
+  
+  .difficulty-medium {
+    @apply text-[#ffa116];
+  }
+  
+  .difficulty-hard {
+    @apply text-[#ef4743];
+  }
+
+  .dot-easy {
+    @apply bg-[#2cbc63];
+  }
+  
+  .dot-medium {
+    @apply bg-[#ffa116];
+  }
+  
+  .dot-hard {
+    @apply bg-[#ef4743];
+  }
+  
+  .border-easy {
+    @apply border-[#2cbc63];
+  }
+  
+  .border-medium {
+    @apply border-[#ffa116];
+  }
+  
+  .border-hard {
+    @apply border-[#ef4743];
+  }
+
+  .bg-easy {
+    @apply bg-[#2cbc63];
+  }
+  
+  .bg-medium {
+    @apply bg-[#ffa116];
+  }
+  
+  .bg-hard {
+    @apply bg-[#ef4743];
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-accent rounded-sm;
+  }
+}
