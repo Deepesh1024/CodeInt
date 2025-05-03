@@ -108,7 +108,7 @@ export default function AdminDashboard() {
           slug: "",
           description: "",
           difficulty: "easy",
-          tags: [],
+          tags: [] as string[],
           examples: [{ input: "", output: "", explanation: "" }],
           testCases: [{ input: "", output: "" }],
           codeTemplate: { javascript: "", python: "", java: "", cpp: "" }
@@ -444,13 +444,13 @@ export default function AdminDashboard() {
                         </TableRow>
                       </TableHeader>
                       <TableBody>
-                        {(users || usersData)
-                          .filter(user => 
+                        {(users || usersData as AdminUser[])
+                          .filter((user: AdminUser) => 
                             searchTerm === "" || 
                             user.username.includes(searchTerm) || 
                             user.email.includes(searchTerm)
                           )
-                          .map(user => (
+                          .map((user: AdminUser) => (
                           <TableRow key={user.id}>
                             <TableCell>{user.id}</TableCell>
                             <TableCell>
@@ -580,7 +580,7 @@ export default function AdminDashboard() {
                                     placeholder="array, hash-table"
                                     onChange={(e) => setNewProblem({
                                       ...newProblem, 
-                                      tags: e.target.value.split(',').map(tag => tag.trim())
+                                      tags: e.target.value.split(',').map(tag => tag.trim()) as string[]
                                     })}
                                   />
                                 </div>
