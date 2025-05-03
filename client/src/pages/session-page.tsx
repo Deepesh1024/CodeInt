@@ -12,6 +12,29 @@ import { Calendar, Clock, Users, PlayCircle, Trophy, ArrowRight, Plus, RefreshCw
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 
+// Define session type
+interface SessionType {
+  id: number;
+  title: string;
+  description: string;
+  date: string;
+  duration: number;
+  participants: number;
+  status: 'active' | 'upcoming' | 'ended';
+  type: 'contest' | 'practice';
+  creator: {
+    name: string;
+    avatar: string;
+  };
+  problems: number[];
+}
+
+interface ProblemType {
+  id: number;
+  title: string;
+  difficulty: string;
+}
+
 export default function SessionPage() {
   const { toast } = useToast();
   const [isCreatingSession, setIsCreatingSession] = useState(false);
@@ -31,7 +54,7 @@ export default function SessionPage() {
   });
 
   // Fetch problems for selection
-  const { data: problems } = useQuery({
+  const { data: problems } = useQuery<ProblemType[]>({
     queryKey: ['/api/problems'],
     staleTime: 300000, // 5 minutes
   });
@@ -120,7 +143,7 @@ export default function SessionPage() {
   };
 
   // Sample data for demo
-  const activeSessions = [
+  const activeSessions: SessionType[] = [
     {
       id: 1,
       title: "Weekly Algorithm Challenge",
@@ -169,7 +192,7 @@ export default function SessionPage() {
   ];
 
   // Use sample data for now
-  const sessionsData = sessions || activeSessions;
+  const sessionsData: SessionType[] = sessions as SessionType[] || activeSessions;
 
   return (
     <div className="p-4 sm:p-6 md:p-8 overflow-y-auto scrollbar-thin">
@@ -253,7 +276,7 @@ export default function SessionPage() {
                     <div className="grid gap-2">
                       <Label>Select Problems</Label>
                       <div className="border border-border rounded-md p-3 max-h-[200px] overflow-y-auto scrollbar-thin">
-                        {(problems || []).map((problem: any) => (
+                        {Array.isArray(problems) ? problems.map((problem) => (
                           <div key={problem.id} className="flex items-center space-x-2 py-2">
                             <Checkbox 
                               id={`problem-${problem.id}`}
@@ -280,7 +303,7 @@ export default function SessionPage() {
                               <span className={`ml-2 inline-block w-2 h-2 rounded-full bg-${problem.difficulty}`}></span>
                             </label>
                           </div>
-                        ))}
+                        )) : null}
                         {!problems && Array(5).fill(0).map((_, idx) => (
                           <div key={idx} className="flex items-center space-x-2 py-2">
                             <div className="h-4 w-4 rounded bg-muted animate-pulse"></div>
@@ -501,7 +524,7 @@ export default function SessionPage() {
 }
 
 interface SessionCardProps {
-  session: any;
+  session: SessionType;
 }
 
 function SessionCard({ session }: SessionCardProps) {

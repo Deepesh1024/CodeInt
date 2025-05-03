@@ -65,31 +65,21 @@ export default function Navbar() {
                 <Link href="/" className={`px-3 py-2 rounded-md text-sm font-medium ${isActive('/') ? 'bg-sidebar-accent text-white' : 'text-gray-300 hover:bg-sidebar-accent hover:text-white'}`}>
                   Problems
                 </Link>
-                <Link href="/progress">
-                  <a className={`px-3 py-2 rounded-md text-sm font-medium ${isActive('/progress') ? 'bg-sidebar-accent text-white' : 'text-gray-300 hover:bg-sidebar-accent hover:text-white'}`}>
-                    My Progress
-                  </a>
+                <Link href="/progress" className={`px-3 py-2 rounded-md text-sm font-medium ${isActive('/progress') ? 'bg-sidebar-accent text-white' : 'text-gray-300 hover:bg-sidebar-accent hover:text-white'}`}>
+                  My Progress
                 </Link>
-                <Link href="/learn">
-                  <a className={`px-3 py-2 rounded-md text-sm font-medium ${isActive('/learn') ? 'bg-sidebar-accent text-white' : 'text-gray-300 hover:bg-sidebar-accent hover:text-white'}`}>
-                    Learn
-                  </a>
+                <Link href="/learn" className={`px-3 py-2 rounded-md text-sm font-medium ${isActive('/learn') ? 'bg-sidebar-accent text-white' : 'text-gray-300 hover:bg-sidebar-accent hover:text-white'}`}>
+                  Learn
                 </Link>
-                <Link href="/sessions">
-                  <a className={`px-3 py-2 rounded-md text-sm font-medium ${isActive('/sessions') ? 'bg-sidebar-accent text-white' : 'text-gray-300 hover:bg-sidebar-accent hover:text-white'}`}>
-                    Sessions
-                  </a>
+                <Link href="/sessions" className={`px-3 py-2 rounded-md text-sm font-medium ${isActive('/sessions') ? 'bg-sidebar-accent text-white' : 'text-gray-300 hover:bg-sidebar-accent hover:text-white'}`}>
+                  Sessions
                 </Link>
-                <Link href="/portfolio">
-                  <a className={`px-3 py-2 rounded-md text-sm font-medium ${isActive('/portfolio') ? 'bg-sidebar-accent text-white' : 'text-gray-300 hover:bg-sidebar-accent hover:text-white'}`}>
-                    Portfolio
-                  </a>
+                <Link href="/portfolio" className={`px-3 py-2 rounded-md text-sm font-medium ${isActive('/portfolio') ? 'bg-sidebar-accent text-white' : 'text-gray-300 hover:bg-sidebar-accent hover:text-white'}`}>
+                  Portfolio
                 </Link>
                 {AuthContext.isAdmin && (
-                  <Link href="/admin">
-                    <a className={`px-3 py-2 rounded-md text-sm font-medium ${isActive('/admin') ? 'bg-sidebar-accent text-white' : 'text-gray-300 hover:bg-sidebar-accent hover:text-white'}`}>
-                      Admin
-                    </a>
+                  <Link href="/admin" className={`px-3 py-2 rounded-md text-sm font-medium ${isActive('/admin') ? 'bg-sidebar-accent text-white' : 'text-gray-300 hover:bg-sidebar-accent hover:text-white'}`}>
+                    Admin
                   </Link>
                 )}
               </div>
@@ -157,36 +147,24 @@ export default function Navbar() {
                       </div>
                     </div>
                   </div>
-                  <Link href="/">
-                    <a className={`px-3 py-2 rounded-md text-md font-medium ${isActive('/') ? 'text-white bg-sidebar-accent' : 'text-muted-foreground hover:bg-sidebar-accent hover:text-white'}`}>
-                      Problems
-                    </a>
+                  <Link href="/" className={`px-3 py-2 rounded-md text-md font-medium ${isActive('/') ? 'text-white bg-sidebar-accent' : 'text-muted-foreground hover:bg-sidebar-accent hover:text-white'}`}>
+                    Problems
                   </Link>
-                  <Link href="/progress">
-                    <a className={`px-3 py-2 rounded-md text-md font-medium ${isActive('/progress') ? 'text-white bg-sidebar-accent' : 'text-muted-foreground hover:bg-sidebar-accent hover:text-white'}`}>
-                      My Progress
-                    </a>
+                  <Link href="/progress" className={`px-3 py-2 rounded-md text-md font-medium ${isActive('/progress') ? 'text-white bg-sidebar-accent' : 'text-muted-foreground hover:bg-sidebar-accent hover:text-white'}`}>
+                    My Progress
                   </Link>
-                  <Link href="/learn">
-                    <a className={`px-3 py-2 rounded-md text-md font-medium ${isActive('/learn') ? 'text-white bg-sidebar-accent' : 'text-muted-foreground hover:bg-sidebar-accent hover:text-white'}`}>
-                      Learn
-                    </a>
+                  <Link href="/learn" className={`px-3 py-2 rounded-md text-md font-medium ${isActive('/learn') ? 'text-white bg-sidebar-accent' : 'text-muted-foreground hover:bg-sidebar-accent hover:text-white'}`}>
+                    Learn
                   </Link>
-                  <Link href="/sessions">
-                    <a className={`px-3 py-2 rounded-md text-md font-medium ${isActive('/sessions') ? 'text-white bg-sidebar-accent' : 'text-muted-foreground hover:bg-sidebar-accent hover:text-white'}`}>
-                      Sessions
-                    </a>
+                  <Link href="/sessions" className={`px-3 py-2 rounded-md text-md font-medium ${isActive('/sessions') ? 'text-white bg-sidebar-accent' : 'text-muted-foreground hover:bg-sidebar-accent hover:text-white'}`}>
+                    Sessions
                   </Link>
-                  <Link href="/portfolio">
-                    <a className={`px-3 py-2 rounded-md text-md font-medium ${isActive('/portfolio') ? 'text-white bg-sidebar-accent' : 'text-muted-foreground hover:bg-sidebar-accent hover:text-white'}`}>
-                      Portfolio
-                    </a>
+                  <Link href="/portfolio" className={`px-3 py-2 rounded-md text-md font-medium ${isActive('/portfolio') ? 'text-white bg-sidebar-accent' : 'text-muted-foreground hover:bg-sidebar-accent hover:text-white'}`}>
+                    Portfolio
                   </Link>
                   {AuthContext.isAdmin && (
-                    <Link href="/admin">
-                      <a className={`px-3 py-2 rounded-md text-md font-medium ${isActive('/admin') ? 'text-white bg-sidebar-accent' : 'text-muted-foreground hover:bg-sidebar-accent hover:text-white'}`}>
-                        Admin Dashboard
-                      </a>
+                    <Link href="/admin" className={`px-3 py-2 rounded-md text-md font-medium ${isActive('/admin') ? 'text-white bg-sidebar-accent' : 'text-muted-foreground hover:bg-sidebar-accent hover:text-white'}`}>
+                      Admin Dashboard
                     </Link>
                   )}
                   

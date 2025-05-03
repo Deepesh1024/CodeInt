@@ -26,26 +26,55 @@ export default function AdminDashboard() {
     slug: "",
     description: "",
     difficulty: "easy",
-    tags: [],
+    tags: [] as string[],
     examples: [{ input: "", output: "", explanation: "" }],
     testCases: [{ input: "", output: "" }],
     codeTemplate: { javascript: "", python: "", java: "", cpp: "" }
   });
   
+  interface AdminUser {
+    id: number;
+    username: string;
+    email: string;
+    role: string;
+    status: string;
+    joined: string;
+    problems_solved: number;
+  }
+
+  interface AdminProblem {
+    id: number;
+    title: string;
+    difficulty: string;
+    acceptance: string;
+    submissions: number;
+    added: string;
+  }
+
+  interface AdminSession {
+    id: number;
+    title: string;
+    type: string;
+    status: string;
+    date: string;
+    duration: string;
+    participants: number;
+  }
+
   // Fetch users for admin
-  const { data: users, isLoading: isLoadingUsers } = useQuery({
+  const { data: users, isLoading: isLoadingUsers } = useQuery<AdminUser[]>({
     queryKey: ['/api/admin/users'],
     staleTime: 60000, // 1 minute
   });
   
   // Fetch problems for admin
-  const { data: problems, isLoading: isLoadingProblems } = useQuery({
+  const { data: problems, isLoading: isLoadingProblems } = useQuery<AdminProblem[]>({
     queryKey: ['/api/admin/problems'],
     staleTime: 60000, // 1 minute
   });
   
   // Fetch sessions for admin
-  const { data: sessions, isLoading: isLoadingSessions } = useQuery({
+  const { data: sessions, isLoading: isLoadingSessions } = useQuery<AdminSession[]>({
     queryKey: ['/api/admin/sessions'],
     staleTime: 60000, // 1 minute
   });

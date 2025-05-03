@@ -85,29 +85,21 @@ function Router() {
       {/* Mobile navigation footer */}
       <div className="md:hidden bg-popover border-t border-border">
         <div className="flex justify-around">
-          <Link href="/">
-            <a className="text-center py-3 px-4 text-white">
-              <i className="block text-xl mb-1">📋</i>
-              <span className="text-xs">Problems</span>
-            </a>
+          <Link href="/" className="text-center py-3 px-4 text-white">
+            <i className="block text-xl mb-1">📋</i>
+            <span className="text-xs">Problems</span>
           </Link>
-          <Link href="/problems/two-sum">
-            <a className="text-center py-3 px-4 text-muted-foreground">
-              <i className="block text-xl mb-1">💻</i>
-              <span className="text-xs">Editor</span>
-            </a>
+          <Link href="/problems/two-sum" className="text-center py-3 px-4 text-muted-foreground">
+            <i className="block text-xl mb-1">💻</i>
+            <span className="text-xs">Editor</span>
           </Link>
-          <Link href="/progress">
-            <a className="text-center py-3 px-4 text-muted-foreground">
-              <i className="block text-xl mb-1">📊</i>
-              <span className="text-xs">Progress</span>
-            </a>
+          <Link href="/progress" className="text-center py-3 px-4 text-muted-foreground">
+            <i className="block text-xl mb-1">📊</i>
+            <span className="text-xs">Progress</span>
           </Link>
-          <Link href="/portfolio">
-            <a className="text-center py-3 px-4 text-muted-foreground">
-              <i className="block text-xl mb-1">👤</i>
-              <span className="text-xs">Profile</span>
-            </a>
+          <Link href="/portfolio" className="text-center py-3 px-4 text-muted-foreground">
+            <i className="block text-xl mb-1">👤</i>
+            <span className="text-xs">Profile</span>
           </Link>
         </div>
       </div>
