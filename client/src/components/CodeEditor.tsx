@@ -165,7 +165,7 @@ export default function CodeEditor({ problemId, codeTemplate, onRunCode }: CodeE
         </Button>
       </div>
       
-      <div className="flex-1 p-3 pt-0 overflow-auto scrollbar-thin">
+      <div className="flex-1 p-3 pt-0 overflow-auto scrollbar-thin" style={{ minHeight: "70vh" }}>
         <div className="h-full rounded bg-muted overflow-hidden">
           <Editor
             height="100%"
